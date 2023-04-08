@@ -5,25 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <h1>Number guessing Game</h1>
-
-    <p>We have selected a random number between 1 and 100. See if you
-    can guess it in 10 turns or fewer. We'll tell you if your guess was too
-    high or too low.</p>
-
-    <label for="txtbox">Enter value :</label>
-    <input type="text" id="txtbox" placeholder="">
-
- 
-
-    <button id="myBtn" type="button">Submit</button>
+    <div id="container">
+        <h1>Number Guess Game</h1>
+        <p>Enter a number between 1 - 100</p>
+    <div id="mid">
+        <p>Number of Guesses:</p>
+        <h1 id="displayGuesses">...</h1>
+    </div>
+        <p id="outputText">Enter Number below</p>
+        <input id="userInput" type="text" placeholder=""><button id="btn">Submit</button>
+    </div>
 
     <script src="main.js"></script>
-
-    
 </body>
 </html>

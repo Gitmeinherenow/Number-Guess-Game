@@ -1,29 +1,33 @@
-const random_number = Math.floor(Math.random() * 100) + 1;
+let random_number = [Math.floor(Math.random() * 100) + 1]
 
+let btn = document.getElementById("btn");
 
+let output = document.getElementById("outputText");
 
-const btnGet = document.getElementById("myBtn")
+let display = document.getElementById("displayGuesses")
 
+let count = 0;
 
-btnGet.addEventListener("click", function(e) { 
-let txtGet = document.getElementById("txtbox");
-console.log("random number : ", random_number)
+btn.addEventListener("click", function(){
+        let input = document.getElementById("userInput").value;
 
-console.log("user input #  : ", txtGet.value)
+        if (input == random_number) {
+            updateDisplay();
+            output.innerHTML = `You guessed right, the number was ${random_number}`;
+        }
 
-    if (random_number == txtGet.value) {
-        console.log("Equal========")
-    }
+        else if (input < random_number) {
+            updateDisplay();
+            output.innerHTML = "Too low, guess again";
+        }
 
-    else if (random_number > txtGet.value) {
-        console.log("Too low...")
-    }
+        else if (input > random_number) {
+            updateDisplay();
+            output.innerHTML = "Too high, guess again";
+        }
+    });
 
-    else {
-        console.log("Too high...")
-    }
-
-
-})
-
-
+    function updateDisplay(){
+        count++;
+        display.innerHTML = count;
+    };
